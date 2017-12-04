@@ -1,5 +1,7 @@
 @import "settings";
 
-body {
-    background-color: $color-bg;
-}
+//Reset CSS
+@import "https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css";
+
+//Components
+@import "navigation";
