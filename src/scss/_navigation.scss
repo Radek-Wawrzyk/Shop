@@ -1,5 +1,164 @@
 
 .navigation {
-  background: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 150px;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  z-index: 100;
+}
+.navigation-logo img {
+  width: 150px;
+}
+.navigation-panel {
+  text-align: right;
+  padding: 0 12px 20px 0;
+  color: #555550;
+}
+.navigation-panel a {
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #555550;
+}
+.navigation-panel span {
+  font-size: 12px;
+  padding: 0 0 0 5px;
+}
+
+//Navigation menu 
+
+.navigation-list {
+  display: flex;
+}
+.navigation-list li a {
+  display: block;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  color: #555550;
+  padding: 12px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.5s, border 0.5s;
+  &:hover {
+    color: black;
+    border-color: black;
+  }
+}
+.navigation-list li a.active {
+  color: black;
+  border-color: black;
+}
+
+//Navigation hamburger icon 
+
+.navigation-icon {
+  height: 20px;
+  width: 30px;
+  background: none;
+  border: 0;
+  display: block;
+  position: relative;
+  transform: rotate(0deg);
+  transition: 0.5s;
+  display: none;
+}
+.navigation-icon span {
+  display: block;
+  width: 90%;
+  height: 2px;
+  background: #555550;
+  transition: 0.5s;
+  opacity: 1;
+  transition: 0.25s ease-in-out;
+  position: absolute;
+}
+.navigation-icon span:nth-child(1) {
+  top: 0;
+}
+.navigation-icon span:nth-child(2) {
+  top: 8px;
+}
+.navigation-icon span:nth-child(3) {
+  top: 16px;
+}
+.navigation-icon.open span {
+  background: black;
+}
+.navigation-icon.open span:nth-child(1) {
+  transform: rotate(45deg);
+  transform-origin: left center;
+}
+.navigation-icon.open span:nth-child(3) {
+  transform: rotate(-45deg);
+  transform-origin: left center;
+  top: 19px;
+}
+.navigation-icon.open span:nth-child(2) {
+  width: 0;
+  opacity: 0;
+}
+.navigation-icon:hover span {
+  background: black;
+}
+.navigation-icon:hover {
+  cursor: pointer;
+}
+
+
+//Media 
+
+@media screen and (max-width: 920px) {
+  .navigation-menu {
+    display: none;
+  }
+  .navigation-icon {
+    display: block;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+header {
+  height: 100vh;
+  position: relative;
+  background:  #e9e6e1;
+}
+header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -100px;
+  width: 100%;
+  height: 100%;
+  transform: skew(0, 25deg);
+  background:  #e9e6e1;
+}
+section {
+  height: 1000px;
+  position: relative;
+  margin: 100px 0;
+}
+section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  transform: skew(0, 25deg);
+  background: #202125;
 }
