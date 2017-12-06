@@ -4,7 +4,7 @@
   left: 0;
   top: 0;
   width: 100%;
-  height: 150px;
+  height: 120px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12,7 +12,7 @@
   z-index: 100;
 }
 .navigation-logo img {
-  width: 150px;
+  width: 100px;
 }
 .navigation-panel {
   text-align: right;
@@ -26,9 +26,19 @@
   color: #555550;
 }
 .navigation-panel span {
-  font-size: 12px;
-  padding: 0 0 0 5px;
+  font-size: 25px;
+  color: #CA8D6E;
+  background: transparent;
+  padding: 5px;
+  border-radius: 25px;
+  transition: color 0.5s, background 0.5s;
 }
+.navigation-panel span:hover {
+  color: $grey;
+  cursor: pointer;
+  background: $white
+}
+
 
 //Navigation menu 
 
@@ -63,10 +73,12 @@
   background: none;
   border: 0;
   display: block;
-  position: relative;
+  position: fixed;
+  right: 50px;
   transform: rotate(0deg);
   transition: 0.5s;
   display: none;
+  z-index: 1;
 }
 .navigation-icon span {
   display: block;
@@ -88,7 +100,7 @@
   top: 16px;
 }
 .navigation-icon.open span {
-  background: black;
+  background: $gold;
 }
 .navigation-icon.open span:nth-child(1) {
   transform: rotate(45deg);
@@ -109,16 +121,83 @@
 .navigation-icon:hover {
   cursor: pointer;
 }
+.navigation-icon.open:hover span {
+  background: $white;
+}
 
+//Navigation footer
+
+.navigation-footer {
+  display: none;
+  padding: 50px 0;
+}
+.navigation-social {
+  display: flex;
+  justify-content: center;
+}
+.navigation-social a {
+  color: $gold;
+  font-size: 20px;
+  padding: 8px;
+  transition: color 0.5s;
+}
+.navigation-social a:hover {
+  color: $white
+}
+
+
+//Navigation animation
+
+.navigation-menu.open {
+  transform: translate(0, 0);
+}
 
 //Media 
 
 @media screen and (max-width: 920px) {
   .navigation-menu {
-    display: none;
+    position: fixed;
+    width:  100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transform: translate(100%, 100%);
+    transition: transform 0.5s;
+    background: $grey
+  }
+  .navigation-list {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+  }
+  .navigation-list li a {
+    color: $gold;
+    font-size: 22px;
+  }
+  .navigation-list li a:hover, .navigation-list li a.active  {
+    color: $white;
+    border-color: $white
   }
   .navigation-icon {
     display: block;
+  }
+  .navigation-footer {
+    display: block;
+  }
+  .navigation-panel {
+    display: flex;
+    justify-content: space-between;
+    padding: 55px 0 0 50px;
+  }
+  .navigation-panel a {
+    color: $white;
+  }
+}
+
+@media screen and (max-height: 340px) {
+  .navigation-list {
+    height: 50%;
   }
 }
 
@@ -135,7 +214,7 @@
 header {
   height: 100vh;
   position: relative;
-  background:  #e9e6e1;
+  background:  $white
 }
 header::after {
   content: "";
@@ -145,14 +224,14 @@ header::after {
   width: 100%;
   height: 100%;
   transform: skew(0, 25deg);
-  background:  #e9e6e1;
+  background:  $white
 }
 section {
-  height: 1000px;
+  height: 1500px;
   position: relative;
   margin: 100px 0;
 }
-section::after {
+section#news::after {
   content: "";
   position: absolute;
   left: 0;
@@ -160,5 +239,5 @@ section::after {
   width: 100%;
   height: 100%;
   transform: skew(0, 25deg);
-  background: #202125;
+  background: $grey
 }
