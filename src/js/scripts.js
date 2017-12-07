@@ -9,7 +9,13 @@ function navigation() {
     navigation.classList.toggle("open");
   });
 
+  document.addEventListener("scroll", function() {
+    document.querySelector(".navigation").classList.add("active");
+  })
+
 } navigation();
+
+
 
 
 
