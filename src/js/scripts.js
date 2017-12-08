@@ -1,4 +1,3 @@
-
 function navigation() {
   const icon = document.querySelector(".navigation-icon"),
         navigation = document.querySelector(".navigation-menu"),
@@ -14,9 +13,3 @@ function navigation() {
   })
 
 } navigation();
-
-
-
-
-
-

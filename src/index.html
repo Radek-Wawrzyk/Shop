@@ -1,88 +1,177 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Shop site</title>
-    <link rel="stylesheet" href="css/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
-  <body>
 
-    <!-- Navigation -->
-    <nav class="navigation">
-      <div class="navigation-logo">
-        <a href="index.html">
-          <img src="img/logo.png" alt="Shop engine logo" />
-        </a>
+<head>
+  <meta charset="utf-8">
+  <title>Shop site</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/slick.css" />
+  <link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navigation">
+    <div class="navigation-logo">
+      <a href="index.html">
+        <img src="img/logo.png" alt="Shop engine logo" />
+      </a>
+    </div>
+
+    <button class="navigation-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="navigation-menu">
+      <div class="navigation-panel">
+        <a href="user-panel.html">Użytkownik</a>
       </div>
 
-      <button class="navigation-icon">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <ul class="navigation-list">
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+        <li>
+          <a class="active" href="index.html">Shop</a>
+        </li>
+        <li>
+          <a href="index.html">authors</a>
+        </li>
+        <li>
+          <a href="index.html">contact</a>
+        </li>
+      </ul>
 
-      <div class="navigation-menu">
-        <div class="navigation-panel">
-          <a href="user-panel.html">Użytkownik</a>
-        </div>
-
-        <ul class="navigation-list">
-          <li><a href="index.html">Home</a></li>
-          <li><a class="active" href="index.html">Shop</a></li>
-          <li><a href="index.html">authors</a></li>
-          <li><a href="index.html">contact</a></li>
+      <div class="navigation-footer">
+        <ul class="navigation-social">
+          <li>
+            <a href="https://www.facebook.com/">
+              <span class="fa fa-facebook" aria-hidden="true"></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/">
+              <span class="fa fa-instagram" aria-hidden="true"></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/">
+              <span class="fa fa-youtube-play" aria-hidden="true"></span>
+            </a>
+          </li>
         </ul>
+      </div>
+    </div>
+  </nav>
 
-        <div class="navigation-footer">
-          <ul class="navigation-social">
-            <li>
-              <a href="https://www.facebook.com/">
-                <span class="fa fa-facebook" aria-hidden="true"></span>
-              </a>
-            </li>
-            <li>
-              <a href="https://www.facebook.com/">
-                <span class="fa fa-instagram" aria-hidden="true"></span>
-              </a>
-            </li>
-            <li>
-              <a href="https://www.facebook.com/">
-                <span class="fa fa-youtube-play" aria-hidden="true"></span>
-              </a>
-            </li>
-          </ul>
+  <main>
+    <header class="header">
+      <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+      <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+      <script type="text/javascript" src="js/slick.min.js"></script>
+      <section class="lazy slider" data-sizes="50vw">
+        <div>
+          <img src="img\logo.png" alt="hehe">
         </div>
-
-      </div>
-    </nav>
-
-    <main>
-      <header class="header">
-
-      </header>
-
-      <section id="news">
-        nowa kolekcja xd
+        <div>
+          <img src="img\logo.png" alt="hehe">
+        </div>
       </section>
+      <script type="text/javascript">
+        $(document).on('ready', function () {
+          $(".vertical-center-4").slick({
+            dots: true,
+            vertical: true,
+            centerMode: true,
+            slidesToShow: 4,
+            slidesToScroll: 2
+          });
+          $(".vertical-center-3").slick({
+            dots: true,
+            vertical: true,
+            centerMode: true,
+            slidesToShow: 3,
+            slidesToScroll: 3
+          });
+          $(".vertical-center-2").slick({
+            dots: true,
+            vertical: true,
+            centerMode: true,
+            slidesToShow: 2,
+            slidesToScroll: 2
+          });
+          $(".vertical-center").slick({
+            dots: true,
+            vertical: true,
+            centerMode: true,
+          });
+          $(".vertical").slick({
+            dots: true,
+            vertical: true,
+            slidesToShow: 3,
+            slidesToScroll: 3
+          });
+          $(".regular").slick({
+            dots: true,
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 3
+          });
+          $(".center").slick({
+            dots: true,
+            infinite: true,
+            centerMode: true,
+            slidesToShow: 5,
+            slidesToScroll: 3
+          });
+          $(".variable").slick({
+            dots: true,
+            infinite: true,
+            variableWidth: true
+          });
+          $(".lazy").slick({
+            lazyLoad: 'ondemand', // ondemand progressive anticipated
+            infinite: true,
+            autoplay: true,
+            autoplaySpeed: 5000,
+            dots: true,
+            arrows: true,
+            centerMode: true
+          });
+        });
+      </script>
+    </header>
 
-      <section>
-        sklep
-      </section>
-    </main>
+    <section id="news">
+      nowa kolekcja xd
+    </section>
 
-    <footer class="footer">
-      <div class="footer-content">
-        <p class="footer-text">COPYRIGHT 2017-2018</p>
-        <a href="index.html"><img class="footer-logo" src="img/logo.png"></a></img>
-        <p class="footer-text">ALL RIGHTS RESERVED</p>
-      </div>
-    </footer>
+    <section>
+      sklep
+    </section>
+  </main>
 
-    <!-- build:js -->
-    <script src="js/plugins.js"></script>
-    <script src="js/scripts.js"></script>
-    <!-- endbuild  -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p class="footer-text">COPYRIGHT 2017-2018</p>
+      <a href="index.html">
+        <img class="footer-logo" src="img/logo.png">
+      </a>
+      </img>
+      <p class="footer-text">ALL RIGHTS RESERVED</p>
+    </div>
+  </footer>
 
-  </body>
+  <!-- build:js -->
+  <script src="js/plugins.js"></script>
+  <script src="js/scripts.js"></script>
+  <!-- endbuild  -->
+
+</body>
+
 </html>
