@@ -208,14 +208,6 @@
 
 
 
-
-
-
-
-
-
-
-
 header {
   height: 100vh;
   position: relative;
@@ -238,4 +230,15 @@ section#news::after {
   height: 100%;
   transform: skew(0, 25deg);
   background: $grey
+}
+section#news::before {
+  content: "";
+  position: absolute;
+  left: -170%;
+  top: 10%;
+  width: 5000px;
+  height: 100%;
+  background: $grey;
+  transform: skew(0, -25deg);
+  margin-top: 900px;
 }
