@@ -1,7 +1,10 @@
 // Header slider main settings
 
 .header {
-  margin-top: 100px;
+  margin-top: 80px;
+  height: calc( 100vh - 80px );
+  position: relative;
+  z-index: 1;
 }
 .header .slick-slider {
   height: 100%;
@@ -20,6 +23,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  outline: none;
 }
 
 //Header Dots 
@@ -51,7 +55,41 @@
 }
 .header-slide-content h2 {
   font-size: 28px;
+  font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 20px;
-  color: $gold;
+  color: $grey;
+
+}
+.header-slide img {
+  height: 60%;
+}
+
+//Media 
+
+@media screen and (max-width: 920px) {
+  .header .slick-slide {
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+  .header-slide img {
+    width: auto;
+    max-width: 90%;
+    height: 50%;
+    margin: 25px 0;
+  }
+  .header-slide-content {
+    width: 100%;
+    padding: 25px 15px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .header .slick-dots {
+    right: 10px;
+  }
+  .header-slide img {
+    height: 40%;
+  }
 }

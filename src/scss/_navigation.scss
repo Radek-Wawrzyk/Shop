@@ -4,45 +4,24 @@
   left: 0;
   top: 0;
   width: 100%;
-  height: 120px;
+  height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 50px;
   z-index: 100;
   transition: height 0.5s, background 0.5s;
+  border-bottom: 1px solid rgba(32, 33, 37,0.15);
 }
 .navigation-logo img {
-  width: 100px;
+  width: 125px;
 }
-.navigation-panel {
-  text-align: right;
-  padding: 0 12px 20px 0;
-  color: #555550;
-}
-.navigation-panel a {
-  font-size: 12px;
-  font-weight: 600;
-  text-decoration: none;
-  color: #555550;
-}
-.navigation-panel span {
-  font-size: 25px;
-  color: #CA8D6E;
-  background: transparent;
-  padding: 5px;
-  border-radius: 25px;
-  transition: color 0.5s, background 0.5s;
-}
-.navigation-panel span:hover {
-  color: $grey;
-  cursor: pointer;
-  background: $white
-}
-
 
 //Navigation menu 
 
+.navigation-menu {
+  display: flex;
+}
 .navigation-list {
   display: flex;
 }
@@ -54,16 +33,28 @@
   text-decoration: none;
   color: #555550;
   padding: 12px;
-  border-bottom: 2px solid transparent;
-  transition: color 0.5s, border 0.5s;
+  transition: color 0.5s;
   &:hover {
-    color: black;
-    border-color: black;
+    color: $gold;
+  }
+  &.active {
+    color: $gold;
   }
 }
-.navigation-list li a.active {
-  color: black;
-  border-color: black;
+.navigation-search {
+  display: flex;
+  align-items: center;
+  padding: 0 0 0 20px;
+}
+.navigation-search .fa {
+  font-size: 18px;
+  color: $lightGrey;
+  transition: color 0.5s;
+  padding: 0 5px;
+  &:hover {
+    cursor: pointer;
+    color: $gold;
+  }
 }
 
 //Navigation hamburger icon 
@@ -154,7 +145,6 @@
 }
 .navigation.active {
   background: rgba(255,255,255,.95);
-  height: 100px;
 }
 
 //Media 
@@ -200,47 +190,22 @@
   }
 }
 
+@media screen and (max-width: 576px) {
+  .navigation {
+    padding: 15px; 
+  }
+}
+
 @media screen and (max-height: 340px) {
   .navigation-list {
     height: 50%;
   }
 }
 
-
-
-header {
-  height: 100vh;
-  position: relative;
-  z-index: 1;
-}
 section {
   height: 1500px;
   position: relative;
-  margin: 200px 0;
 }
 #news {
-  z-index: 5;
   background: $grey;
-}
-section#news::before {
-  content: "";
-  position: absolute;
-  top: -25%;
-  left: 0;
-  width: 100%;
-  height: 50%;
-  background: $grey;
-  clip-path: polygon(0 0, 100% 50%, 50% 50%, 0 50%);
-}
-section#news::after{
-  content: "";
-  position: absolute;
-  z-index: 120;
-  bottom: -25%;
-  left: 0;
-  width: 100%;
-  height: 50%;
-  background: $grey;
-  clip-path: polygon(0% 0%, 100% 50%, 50% 50%, 0 50%);
-  transform: rotate(180deg);
 }

@@ -10,12 +10,11 @@
 }
 .footer-text  {
   display: flex;
-  color: rgb(160, 160, 160);
+  color: $lightGrey;
   font-size: 12px;
 }
 .footer-logo  {
-  width: 120px;
-  height: 120px;
+  width: 125px;
 }
 
 //Media
@@ -29,7 +28,6 @@
   }
   .footer-logo {
     width: 100px;
-    height: 100px;
   }
 }
 
@@ -43,6 +41,5 @@
   }
   .footer-logo {
     width: 90px;
-    height: 90px;
   }
 }
